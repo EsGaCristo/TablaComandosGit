@@ -1,0 +1,28 @@
+Comando,Descripción,Parámetros,Ejemplo
+GIT,Sistema de control de versiones distribuido, ,git --version
+CONFIG,Configura opciones de Git,[Nombre de usuario]; [Dirección de correo electrónico],git config --global user.name "Tu Nombre"; git config --global user.email "tu@email.com"
+HELP,Muestra información de ayuda,[Nombre del comando],git help commit
+INIT,Inicializa un repositorio Git, ,git init
+CLONE,Clona un repositorio Git existente,[URL del repositorio remoto]; [Directorio de destino (opcional)],git clone https://github.com/ejemplo/repo.git
+ADD,Agrega cambios al área de preparación (staging),[Nombre de archivo o directorio],git add archivo.txt
+STATUS,Muestra el estado de los archivos en el directorio de trabajo y el área de preparación,, git status
+DIFF,Muestra las diferencias entre dos puntos en la historia del repositorio,[Rango de revisiones]; [Opciones de formato],git diff HEAD~2..HEAD~1
+COMMIT,Registra cambios en el repositorio,[Mensaje de confirmación]; [Opciones adicionales],git commit -m "Agrega nuevas características"
+NOTES,Agrega notas a objetos Git,[Objeto Git]; [Opciones],git notes add -m "Nota sobre esta confirmación"
+RESTORE,Restaura archivos desde el área de preparación o el último commit,[Nombre de archivo]; [Opciones adicionales],git restore archivo.txt
+RESET,Resetea el estado del área de preparación y el directorio de trabajo a un punto específico en la historia,[Rango de revisiones]; [Opciones adicionales],git reset HEAD~1
+RM,Elimina archivos del directorio de trabajo y del seguimiento de Git,[Nombre de archivo]; [Opciones adicionales],git rm archivo.txt
+MV,Mueve o renombra archivos o directorios en el directorio de trabajo y en el seguimiento de Git,[Nombre de archivo o directorio original]; [Nombre de destino],git mv archivo-viejo.txt archivo-nuevo.txt
+SWITCH,Cambia entre ramas o puntos en la historia del repositorio (Git 2.23+),[Nombre de la rama o revisión]; [Opciones adicionales],git switch otra-rama
+MERGE,Combina cambios de una rama en otra,[Nombre de la rama a fusionar]; [Opciones adicionales],git merge otra-rama
+LOG,Muestra un registro de confirmaciones (commits),[Opciones de formato y filtro],git log --oneline
+FETCH,Descarga objetos y referencias de otro repositorio,[Repositorio remoto y opciones],git fetch origin
+PULL,Recupera cambios de otro repositorio y los integra en la rama actual,[Repositorio remoto y opciones],git pull origin master
+PUSH,Envía cambios locales a un repositorio remoto,[Repositorio remoto y opciones],git push origin master
+SHOW,Muestra diversos tipos de objetos Git,[Objeto Git y opciones],git show HEAD
+REBASE,Reorganiza y reescribe la historia de confirmaciones,[Opciones para ajustar la historia],git rebase master
+REVERT,Deshace una o varias confirmaciones y crea una nueva confirmación de reversión,[Confirmaciones a revertir y opciones],git revert HEAD~2..HEAD~1
+CHECKOUT,Cambia entre ramas o puntos en la historia del repositorio,[Nombre de la rama o revisión]; [Opciones adicionales],git checkout otra-rama
+REMOTE,Lista/agrega o quita repositorios remotos,[Opciones para administrar repositorios remotos],git remote -v
+BRANCH,Lista/crea o borra ramas en el repositorio,[Nombre de la rama]; [Opciones adicionales],git branch nueva-rama
+TAG,Crea/lista o verifica etiquetas firmadas con GPG,[Nombre de la etiqueta]; [Opciones adicionales],git tag -a v1.0 -m "Versión 1.0" 

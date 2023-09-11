@@ -10,44 +10,45 @@
 </head>
 
 <body>
+    <div>
+        <h1 style="color: antiquewhite; text-align: center; padding: 20px; ">Comandos git</h1>
+    </div>
     <div class="container">
         <table>
             <thead>
                 <tr>
-                    <th></th>
-                    <th>Git</th>
-                    <th>Bazaar</th>
-                    <th>Darcs</th>
+                    <th>Comando</th>
+                    <th>Descripcion</th>
+                    <th>Parametros</th>
+                    <th>Ejemplo</th>
                 </tr>
-            <tbody>
-                <tr>
-                    <td>Fecha de lanzamiento</td>
-                    <td>07 de Abril del 2005</td>
-                    <td>18 de diciembre del 2007</td>
-                    <td>10 de Febrero 2013</td>
-                </tr>
-                <tr>
-                    <td>Creadores</td>
-                    <td>Linus Tovalds</td>
-                    <td>Canonical</td>
-                    <td>David Roundy</td>
-                </tr>
-                <tr>
-                    <td>Lenguaje</td>
-                    <td>C, scripts en shell, python y shell</td>
-                    <td>Python</td>
-                    <td>Haskell</td>
-                </tr>
-                <tr>
-                    <td>Modelo de desarrollo</td>
-                    <td>Software libre</td>
-                    <td>Software libre</td>
-                    <td>Software libre</td>
-                </tr>
+            <tbody id="tabla-body">
             </tbody>
             </thead>
         </table>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "datos.csv", // Ruta al archivo CSV
+            dataType: "text",
+            success: function (data) {
+                const filas = data.split("\n");
+                const tbody = $("#tabla-body");
+                $.each(filas, function (i, val) {
+                    const campos = val.split(",");
+                    const fila = $("<tr></tr>");
+                    $.each(campos, function (j, campo) {
+                        fila.append("<td>" + campo + "</td>");
+                    });
+                    tbody.append(fila);
+                });
+            }
+        });
+    });
+</script>
 
 </html>
